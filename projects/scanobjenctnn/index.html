@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .author {
+          font-size: 1.2rem;
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131017488-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131017488-1');
+    </script>
+    <title>
+      JSIS3D: Joint Semantic-Instance Segmentation of 3D Point Clouds with
+      Multi-Task Pointwise Networks and Multi-Value Conditional Random Fields
+    </title>
+  </head>
+
+  <body>
+    <div class="container section">
+      <!-- Paper title -->
+      <div class="row">
+        <div class="col">
+          <h1 class="centering">
+            JSIS3D: Joint Semantic-Instance Segmentation of 3D Point Clouds with
+            Multi-Task Pointwise Networks and Multi-Value Conditional Random Fields
+          </h1>
+        </div>
+      </div>
+      <!-- Author block -->
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="author"><a href="https://pqhieu.github.io/">Quang-Hieu Pham</a><small><sup>1</sup></small></div>
+          <div class="author"><a href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><small><sup>3</sup></small></div>
+          <div class="author"><a href="https://sonhua.github.io/">Binh-Son Hua</a><small><sup>2</sup></small></div>
+          <div class="author"><a href="http://web.mit.edu/gemmar/www/">Gemma Roig</a><small><sup>1</sup></small></div>
+          <div class="author"><a href="http://www.saikit.org/">Sai-Kit Yeung</a><small><sup>4</sup></small></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="school"><small><sup>1</sup></small>Singapore University of Technology and Design</div>
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="school"><small><sup>2</sup></small>The University of Tokyo</div>
+          <div class="school"><small><sup>3</sup></small>Deakin University</div>
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="school"><small><sup>4</sup></small>Hong Kong University of Science and Technology</div>
+          <div></div>
+        </div>
+      </div>
+      <br/>
+      <!-- Venue -->
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2019 <strong>(Oral)</strong></div>
+          <div></div>
+        </div>
+      </div>
+      <br/>
+      <!-- Links -->
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div>
+            <a href="assets/cvpr19/main.pdf">Paper</a> &nbsp/&nbsp
+            <a href="https://arxiv.org/abs/1904.00699">Arxiv</a> &nbsp/&nbsp
+            <a href="https://github.com/pqhieu/JSIS3D">Code</a> &nbsp/&nbsp
+            <a href="assets/cvpr19/poster.pdf">Poster</a>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col">
+          <img class="teaser" src="assets/cvpr19/teaser.jpg">
+          <div class="caption">
+            <b>Our proposed MT-PNet architecture for joint semantic-instance
+            segmentation.</b> The point cloud first go through a feed-forward
+            neural network to compute a 128-dimension feature vector for each
+            point. Here it splits into to branches: one for instance embedding
+            and the other for semantic segmentation.
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col">
+          <div class="subtitle">Abstract</div>
+          <div class="abstract">
+            Deep learning techniques have become the to-go models for most
+            vision-related tasks on 2D images. However, their power has not been
+            fully realised on several tasks in 3D space, e.g., 3D scene
+            understanding. In this work, we jointly address the problems of
+            semantic and instance segmentation of 3D point clouds. Specifically,
+            we develop a multi-task pointwise network that simultaneously
+            performs two tasks: predicting the semantic classes of 3D points and
+            embedding the points into high-dimensional vectors so that points of
+            the same object instance are represented by similar embeddings. We
+            then propose a multi-value conditional random field model to
+            incorporate the semantic and instance labels and formulate the
+            problem of semantic and instance segmentation as jointly optimising
+            labels in the field model. The proposed method is thoroughly
+            evaluated and compared with existing methods on different indoor
+            scene datasets including S3DIS and SceneNN. Experimental results
+            showed the robustness of the proposed joint semantic-instance
+            segmentation scheme over its single components. Our method also
+            achieved state-of-the-art performance on semantic segmentation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
