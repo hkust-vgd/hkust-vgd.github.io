@@ -21,8 +21,7 @@
       gtag('config', 'UA-131017488-1');
     </script>
     <title>
-      JSIS3D: Joint Semantic-Instance Segmentation of 3D Point Clouds with
-      Multi-Task Pointwise Networks and Multi-Value Conditional Random Fields
+      ScanObjectNN
     </title>
   </head>
 
@@ -32,8 +31,7 @@
       <div class="row">
         <div class="col">
           <h1 class="centering">
-            JSIS3D: Joint Semantic-Instance Segmentation of 3D Point Clouds with
-            Multi-Task Pointwise Networks and Multi-Value Conditional Random Fields
+            Revisiting Point Cloud Classification: A New Benchmark Dataset and Classification Model on Real-World Data
           </h1>
         </div>
       </div>
@@ -41,33 +39,33 @@
       <div class="row">
         <div class="col equidistance">
           <div></div>
-          <div class="author"><a href="https://pqhieu.github.io/">Quang-Hieu Pham</a><small><sup>1</sup></small></div>
-          <div class="author"><a href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><small><sup>3</sup></small></div>
-          <div class="author"><a href="https://sonhua.github.io/">Binh-Son Hua</a><small><sup>2</sup></small></div>
-          <div class="author"><a href="http://web.mit.edu/gemmar/www/">Gemma Roig</a><small><sup>1</sup></small></div>
-          <div class="author"><a href="http://www.saikit.org/">Sai-Kit Yeung</a><small><sup>4</sup></small></div>
+          <div class="author"><a href="https://mikacuy.github.io/">Mikaela Angelina Uy</a><small><sup>1</sup></small></div>
+          <div class="author"><a href="https://pqhieu.github.io/">Quang-Hieu Pham</a><small><sup>2</sup></small></div>
+          <div class="author"><a href="https://sonhua.github.io/">Binh-Son Hua</a><small><sup>3</sup></small></div>
+          <div class="author"><a href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><small><sup>4</sup></small></div>
+          <div class="author"><a href="http://www.saikit.org/">Sai-Kit Yeung</a><small><sup>1</sup></small></div>
           <div></div>
         </div>
       </div>
       <div class="row">
         <div class="col equidistance">
           <div></div>
-          <div class="school"><small><sup>1</sup></small>Singapore University of Technology and Design</div>
+          <div class="school"><small><sup>1</sup></small>Hong Kong University of Science and Technology</div>
+          <div></div>
+        </div>
+      </div>      
+      <div class="row">
+        <div class="col equidistance">
+          <div></div>
+          <div class="school"><small><sup>2</sup></small>Singapore University of Technology and Design</div>
           <div></div>
         </div>
       </div>
       <div class="row">
         <div class="col equidistance">
           <div></div>
-          <div class="school"><small><sup>2</sup></small>The University of Tokyo</div>
-          <div class="school"><small><sup>3</sup></small>Deakin University</div>
-          <div></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div class="school"><small><sup>4</sup></small>Hong Kong University of Science and Technology</div>
+          <div class="school"><small><sup>3</sup></small>The University of Tokyo</div>
+          <div class="school"><small><sup>4</sup></small>Deakin University</div>
           <div></div>
         </div>
       </div>
@@ -76,7 +74,7 @@
       <div class="row">
         <div class="col equidistance">
           <div></div>
-          <div class="venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2019 <strong>(Oral)</strong></div>
+          <div class="venue">International Conference on Computer Vision (ICCV), 2019 <strong>(Oral)</strong></div>
           <div></div>
         </div>
       </div>
@@ -86,10 +84,11 @@
         <div class="col equidistance">
           <div></div>
           <div>
-            <a href="assets/cvpr19/main.pdf">Paper</a> &nbsp/&nbsp
-            <a href="https://arxiv.org/abs/1904.00699">Arxiv</a> &nbsp/&nbsp
-            <a href="https://github.com/pqhieu/JSIS3D">Code</a> &nbsp/&nbsp
-            <a href="assets/cvpr19/poster.pdf">Poster</a>
+            <a href="assets/iccv19_main.pdf">Paper</a> &nbsp/&nbsp
+            <a href="assets/iccv19_supp.pdf">Supplementary</a> &nbsp/&nbsp
+            <!-- <a href="https://arxiv.org/abs/1904.00699">Arxiv</a> &nbsp/&nbsp -->
+            <!-- <a href="https://github.com/pqhieu/JSIS3D">Code</a> &nbsp/&nbsp -->
+            <!-- <a href="assets/cvpr19/poster.pdf">Poster</a> -->
           </div>
           <div></div>
         </div>
@@ -97,13 +96,9 @@
       <br/>
       <div class="row">
         <div class="col">
-          <img class="teaser" src="assets/cvpr19/teaser.jpg">
+          <img class="teaser" src="assets/objects_teaser.pdf">
           <div class="caption">
-            <b>Our proposed MT-PNet architecture for joint semantic-instance
-            segmentation.</b> The point cloud first go through a feed-forward
-            neural network to compute a 128-dimension feature vector for each
-            point. Here it splits into to branches: one for instance embedding
-            and the other for semantic segmentation.
+            <b>Sample objects from our ScanObjectNN dataset.
           </div>
         </div>
       </div>
@@ -112,24 +107,8 @@
         <div class="col">
           <div class="subtitle">Abstract</div>
           <div class="abstract">
-            Deep learning techniques have become the to-go models for most
-            vision-related tasks on 2D images. However, their power has not been
-            fully realised on several tasks in 3D space, e.g., 3D scene
-            understanding. In this work, we jointly address the problems of
-            semantic and instance segmentation of 3D point clouds. Specifically,
-            we develop a multi-task pointwise network that simultaneously
-            performs two tasks: predicting the semantic classes of 3D points and
-            embedding the points into high-dimensional vectors so that points of
-            the same object instance are represented by similar embeddings. We
-            then propose a multi-value conditional random field model to
-            incorporate the semantic and instance labels and formulate the
-            problem of semantic and instance segmentation as jointly optimising
-            labels in the field model. The proposed method is thoroughly
-            evaluated and compared with existing methods on different indoor
-            scene datasets including S3DIS and SceneNN. Experimental results
-            showed the robustness of the proposed joint semantic-instance
-            segmentation scheme over its single components. Our method also
-            achieved state-of-the-art performance on semantic segmentation.
+            Deep learning techniques for point cloud data have demonstrated great potentials in solving classical problems in 3D computer vision such as 3D object classification and segmentation. Several recent 3D object classification methods have reported state-of-the-art performance on CAD model datasets such as ModelNet40 with high accuracy ~ 92%. Despite such impressive results, in this paper, we argue that object classification is still a challenging task when objects are framed with real-world settings. To prove this, we introduce ScanObjectNN, a new real-world point cloud object dataset based on scanned indoor scene data. From our comprehensive benchmark, we show that our 
+            dataset poses great challenges to existing point cloud classification techniques as objects from real-world scans are often cluttered with background and/or are partial due to occlusions. We identify three key open problems for point cloud object classification, and propose new point cloud classification neural networks that achieve state-of-the-art performance on classifying objects with cluttered background.
           </div>
         </div>
       </div>

@@ -1,0 +1,63 @@
+.html {
+    font-size: 62.5%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* include padding and border in total width and height */
+    box-sizing: border-box;
+}
+
+.col {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+    .container {
+        width: 85%;
+        padding: 0;
+    }
+}
+
+
+@media (min-width: 550px) {
+  .container {
+      width: 80%;
+  }
+  .col {
+      margin-left: 4%;
+  }
+  .col:first-child {
+      margin-left: 0;
+  }
+
+  .s1.col  { width: 4.66666666667%; }
+  .s2.col  { width: 13.3333333333%; }
+  .s3.col  { width: 22%;            }
+  .s4.col  { width: 30.6666666667%; }
+  .s5.col  { width: 39.3333333333%; }
+  .s6.col  { width: 48%;            }
+  .s7.col  { width: 56.6666666667%; }
+  .s8.col  { width: 65.3333333333%; }
+  .s9.col  { width: 74.0%;          }
+  .s10.col { width: 82.6666666667%; }
+  .s11.col { width: 91.3333333333%; }
+  .s12.col { width: 100%; margin-left: 0; }
+}
+
+.container:after, .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+p {
+    margin: 0 10px;
+}
