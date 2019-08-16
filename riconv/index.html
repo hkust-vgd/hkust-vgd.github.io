@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics</title>
+  <title>Rotation Invariant Convolutions for 3D Point Clouds Deep Learning</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -73,11 +73,12 @@
   <div class="container">
 
 
-        <h4 style="text-align:center">ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics</h4>
+        <h4 style="text-align:center">Rotation Invariant Convolutions for 3D Point Clouds Deep Learning</h4>
 
         <p align="center", style="margin-bottom:12px;">
         <a class="simple" href="">Zhiyuan Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        <a class="simple" href="http://sonhua.github.io">Binh-Son Hua</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="http://sonhua.github.io">Binh-Son Hua</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="simple" href="">David W. Rosen</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
         <a class="simple" href="http://www.saikit.org">Sai-Kit Yeung</a><sup>3</sup></p>
 
         <p align="center" style="margin-bottom:20px;">
@@ -89,16 +90,18 @@
         <sup>3</sup>Hong Kong University of Science and Technology
 		</p>
 
-		<p align="center">International Conference on Computer Vision (ICCV) 2019 <strong>(Oral)</strong></p>
+		<p align="center">International Conference on 3D Vision (3DV) 2019</p>
         <figure>
-            <img src="images/shellconv_new.png" style="width:100%"></img>
+            <img src="images/RIO_cam.png" style="width:100%"></img>
             <br>
         </figure>
         <br>
         <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
             <p align="justify"> 
 			<br>
-			Deep learning with 3D data has progressed significantly since the introduction of convolutional neural networks that can handle point order ambiguity in point cloud data. While being able to achieve good accuracies in various scene understanding tasks, previous methods often have low training speed and complex network architecture. In this paper, we address these problems by proposing an efficient end-to-end permutation invariant convolution for point cloud deep learning. Our simple yet effective convolution operator named \ourconv uses statistics from concentric spherical shells to define representative features and resolve the point order ambiguity, allowing traditional convolution to perform on such features. Based on \ourconv we further build an efficient neural network named \ournet to directly consume the point clouds with larger receptive fields while maintaining less layers. We demonstrate the efficacy of \ournet by producing state-of-the-art results on object classification, object part segmentation, and semantic scene segmentation while keeping the network very fast to train.
+			Recent progresses in 3D deep learning has shown that it is possible to design special convolution operators to consume point cloud data. However, a typical drawback is that rotation invariance is often not guaranteed, resulting in networks being trained with data augmented with rotations. 
+            In this paper, we introduce a novel convolution operator for point clouds that achieves rotation invariance. Our core idea is to use low-level rotation invariant geometric features such as distances and angles to design a convolution operator for point cloud learning. The well-known point ordering problem is also addressed by a binning approach seamlessly built into the convolution. This convolution operator then serves as the basic building block of a neural network that is robust to point clouds under 6DoF transformations such as translation and rotation.  
+            Our experiment shows that our method performs with high accuracy in common scene understanding tasks such as object classification and segmentation. Compared to previous works, most importantly, our method is able to generalize and achieve consistent results across different scenarios in which training and testing can contain arbitrary rotations. 
             </p>
             
         </div>
@@ -146,10 +149,10 @@
 		<!-- ------------------------------------- -->
 		<div class="section">
             <h5>Citation</h5> 
-<pre style="margin:0"><code>@inproceedings{zhang-shellnet-iccv19,
-    title = {ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics},
-    author = {Zhiyuan Zhang and Binh-Son Hua and Sai-Kit Yeung},
-    booktitle = {International Conference on Computer Vision (ICCV)},
+<pre style="margin:0"><code>@inproceedings{zhang-riconv-3dv19,
+    title = {Rotation Invariant Convolutions for 3D Point Clouds Deep Learning},
+    author = {Zhiyuan Zhang and Binh-Son Hua and David W. Rosen and Sai-Kit Yeung},
+    booktitle = {International Conference on 3D Vision (3DV)},
     year = {2019}
 }</code></pre>    			
 		</div>
@@ -160,7 +163,7 @@
         <div class="section">
             <h5>Acknowledgements</h5>            
             <p>
-			The authors acknowledge support from the SUTD Digital Manufacturing and Design Centre  funded by the Singapore National Research Foundation, and an internal grant from HKUST (R9429).
+			The authors acknowledge support from the SUTD Digital Manufacturing and Design Centre (DManD) funded by the Singapore National Research Foundation. This project is also partially supported by Singapore MOE Academic Research Fund MOE2016-T2-2-154 and Singapore NRF under its Virtual Singapore Award No. NRF2015VSGAA3DCM001-014.
 			</p>
         </div>
   </div>
