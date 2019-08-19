@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google icon
+  -------------------------------------------------- -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Analytics
+  -------------------------------------------------- -->
+
+  <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+  <style>
+    img {
+        display: block;
+    }
+    
+    .column-50 {
+        float: left;
+        width: 50%;
+    }
+    .row-50:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .floating-teaser {
+        float: left;
+        width: 30%;
+        text-align: center;
+        padding: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+
+        <h4 style="text-align:center">ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics</h4>
+
+        <p align="center", style="margin-bottom:12px;">
+        <a class="simple" href="">Zhiyuan Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="http://sonhua.github.io">Binh-Son Hua</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="http://www.saikit.org">Sai-Kit Yeung</a><sup>3</sup></p>
+
+        <p align="center" style="margin-bottom:20px;">
+        
+        <sup>1</sup>Singapore University of Technology and Design
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>2</sup>The University of Tokyo
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>3</sup>Hong Kong University of Science and Technology
+		</p>
+
+		<p align="center">International Conference on Computer Vision (ICCV) 2019 <strong>(Oral)</strong></p>
+        <figure>
+            <img src="images/shellconv_new.png" style="width:100%"></img>
+            <br>
+        </figure>
+        <br>
+        <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+            <p align="justify"> 
+			<br>
+			Deep learning with 3D data has progressed significantly since the introduction of convolutional neural networks that can handle point order ambiguity in point cloud data. While being able to achieve good accuracies in various scene understanding tasks, previous methods often have low training speed and complex network architecture. In this paper, we address these problems by proposing an efficient end-to-end permutation invariant convolution for point cloud deep learning. Our simple yet effective convolution operator named ShellConv uses statistics from concentric spherical shells to define representative features and resolve the point order ambiguity, allowing traditional convolution to perform on such features. Based on ShellConv we further build an efficient neural network named ShellNet to directly consume the point clouds with larger receptive fields while maintaining less layers. We demonstrate the efficacy of ShellNet by producing state-of-the-art results on object classification, object part segmentation, and semantic scene segmentation while keeping the network very fast to train.
+            </p>
+            
+        </div>
+
+        <!-- ------------------------------------- -->
+
+        <div class="section">
+            <h5>Materials</h5>            
+            <div class="container" style="width:95%">
+				<!-- Icon row -->
+				<div class="row">
+				  <div class="two columns">
+					  <a href=""><img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="images/page01.png"></a>
+				  </div>
+				  <div class="two columns">
+					  <a href="data/supp.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 116px;" src="images/supp.png"></a>
+				  </div>
+				  <div class="two columns">
+					  <a href=""><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 116px;" src="images/code.png"></a>
+				  </div>		  
+				  <div class="two columns">
+					  <a href="data/poster.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 180px;" src="images/poster.png"></a>
+				  </div>              
+				</div>
+				<!-- Link row -->
+				<div class="row">
+				  <div class="two columns">                  
+					  <a href="">Paper</a>
+				  </div>
+				  <div class="two columns">                  
+					  <a href="data/supp.pdf">Supplemental</a>
+				  </div>
+				  <div class="two columns">
+					  <a href="">Code</a>
+				  </div>
+				  <div class="two columns">
+					  <a href="data/poster.pdf">Poster</a>
+				  </div>
+				</div>
+				<br>
+				
+            </div>
+        </div>
+
+		<!-- ------------------------------------- -->
+		<div class="section">
+            <h5>Citation</h5> 
+<pre style="margin:0"><code>@inproceedings{zhang-shellnet-iccv19,
+    title = {ShellNet: Efficient Point Cloud Convolutional Neural Networks using Concentric Shells Statistics},
+    author = {Zhiyuan Zhang and Binh-Son Hua and Sai-Kit Yeung},
+    booktitle = {International Conference on Computer Vision (ICCV)},
+    year = {2019}
+}</code></pre>    			
+		</div>
+		
+        <!-- ------------------------------------- -->
+        <br> 
+        
+        <div class="section">
+            <h5>Acknowledgements</h5>            
+            <p>
+			The authors acknowledge support from the SUTD Digital Manufacturing and Design Centre  funded by the Singapore National Research Foundation, and an internal grant from HKUST (R9429).
+			</p>
+        </div>
+  </div>
+  
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
