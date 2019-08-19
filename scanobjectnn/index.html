@@ -1,110 +1,122 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-      .author {
-          font-size: 1.2rem;
-      }
-    </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86869673-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-      gtag('config', 'UA-86869673-1');
-    </script>
-    <title>
-      ScanObjectNN
-    </title>
-  </head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>ScanObjectNN</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <body>
-    <div class="container section">
-      <!-- Paper title -->
-      <div class="row">
-        <div class="col">
-          <h1 class="centering">
-            Revisiting Point Cloud Classification: A New Benchmark Dataset and Classification Model on Real-World Data
-          </h1>
-        </div>
-      </div>
-      <!-- Author block -->
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div class="author"><a href="https://mikacuy.github.io/">Mikaela Angelina Uy</a><small><sup>1</sup></small></div>
-          <div class="author"><a href="https://pqhieu.github.io/">Quang-Hieu Pham</a><small><sup>2</sup></small></div>
-          <div class="author"><a href="https://sonhua.github.io/">Binh-Son Hua</a><small><sup>3</sup></small></div>
-          <div class="author"><a href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><small><sup>4</sup></small></div>
-          <div class="author"><a href="http://www.saikit.org/">Sai-Kit Yeung</a><small><sup>1</sup></small></div>
-          <div></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div class="school"><small><sup>1</sup></small>Hong Kong University of Science and Technology</div>
-          <div class="school"><small><sup>2</sup></small>Singapore University of Technology and Design</div>
-          <div></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div class="school"><small><sup>3</sup></small>The University of Tokyo</div>
-          <div class="school"><small><sup>4</sup></small>Deakin University</div>
-          <div></div>
-        </div>
-      </div>
-      <br/>
-      <!-- Venue -->
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div class="venue">International Conference on Computer Vision (ICCV), 2019 <strong>(Oral)</strong></div>
-          <div></div>
-        </div>
-      </div>
-      <br/>
-      <!-- Links -->
-      <div class="row">
-        <div class="col equidistance">
-          <div></div>
-          <div>
-            <a href="assets/iccv19_main.pdf">Paper</a> &nbsp/&nbsp
-            <a href="assets/iccv19_supp.pdf">Supplementary</a>&nbsp/&nbsp
-            <a href="https://github.com/hkust-vgd/scanobjectnn.git">Code</a>&nbsp/&nbsp
-            Dataset (Coming Soon)
-          </div>
-          <div></div>
-        </div>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col">
-          <img class="teaser" src="assets/objects_teaser.png">
-          <div class="caption">
-            <b>Sample objects from our ScanObjectNN dataset.</b> The dataset
-            contains ~15,000 objects that are categorized into 15 categories with 2902 unique object instances.
-            The raw objects are represented by a list of points with global and
-            local coordinates, normals, colors attributes and semantic labels. We also provide part annotations, which to the best of our knowledge is the first on real-world data. 
-          </div>
-        </div>
-      </div>
-      <br/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <div class="row">
-        <div class="col">
-          <div class="subtitle">Abstract</div>
-          <div class="abstract">
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86869673-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+  <style>
+    img {
+        display: block;
+    }
+    
+    .column-50 {
+        float: left;
+        width: 50%;
+    }
+    .row-50:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .floating-teaser {
+        float: left;
+        width: 30%;
+        text-align: center;
+        padding: 15px;
+    }  
+    .venue strong {
+      color: #99324b;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+        <h4 style="text-align:center">Revisiting Point Cloud Classification: A New Benchmark Dataset and Classification Model on Real-World Data</h4>
+
+        <p align="center", style="margin-bottom:12px;">
+        <a class="simple" href="https://mikacuy.github.io/">Mikaela Angelina Uy</a><sup>1</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="https://pqhieu.github.io/">Quang-Hieu Pham</a><sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="https://sonhua.github.io/">Binh-Son Hua</a></a><sup>3</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="simple" href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><sup>4</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a class="simple" href="http://people.sutd.edu.sg/~saikit/">Sai-Kit Yeung</a><sup>1</sup>
+        </p>
+
+        <p align="center" style="margin-bottom:20px;">
+        <sup>1</sup>Hong Kong University of Science and Technology
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>2</sup>Singapore University of Technology and Design <br>
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>3</sup>The University of Tokyo
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>4</sup>Deakin University
+		</p>
+
+    <div class="venue">
+		<p align="center"> International Conference on Computer Vision (ICCV), 2019 <strong>(Oral)</strong> </p>
+    </div>
+
+      <figure>
+          <img src="images/objects_teaser.png" style="width:100%"></img>
+          <br>
+      </figure>
+      <div class="caption">
+        <b>Sample objects from our ScanObjectNN dataset.</b> The dataset
+        contains ~15,000 objects that are categorized into 15 categories with 2902 unique object instances.
+        The raw objects are represented by a list of points with global and
+        local coordinates, normals, colors attributes and semantic labels. We also provide part annotations, which to the best of our knowledge is the first on real-world data. 
+      </div>
+
+        <br>
+
+      <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+      <h5>Abstract</h5> 
+        <p align="justify"> 
             Deep learning techniques for point cloud data have demonstrated
             great potentials in solving classical problems in 3D computer vision
             such as 3D object classification and segmentation. Several recent 3D
@@ -122,12 +134,131 @@
             point cloud object classification, and propose new point cloud
             classification neural networks that achieve state-of-the-art
             performance on classifying objects with cluttered background.
-          </div>
-        </div>
+            <br>
+            <br>
+        </p>
+            
       </div>
 
+        <!-- -->
 
+        <div class="section">
+            <h5>Materials</h5>            
+            <div class="container" style="width:95%">
+				<!-- Icon row -->
+				<div class="row">
+				  <div class="two columns">
+					  <a href="https://arxiv.org/pdf/1908.04616.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="images/screenshot_main.png"></a>
+				  </div>
+				  <div class="two columns">
+					  <a href="assets/iccv19_supp.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="images/screenshot_supplementary.png"></a>
+				  </div>
+<!-- 				  <div class="two columns">
+					  <a href="https://github.com/hkust-vgd/scanobjectnn.git"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 116px;" src="images/code.png"></a>
+				  </div>	 -->	  
+<!-- 				  <div class="two columns">
+					  <a href="data/poster.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 180px;" src="images/poster.png"></a>
+				  </div>     -->          
+				</div>
+				<!-- Link row -->
+				<div class="row">
+				  <div class="two columns">                  
+					  <a href="https://arxiv.org/pdf/1908.04616.pdf">Paper</a>
+				  </div>
+				  <div class="two columns">                  
+					  <a href="assets/iccv19_supp.pdf">Supplementary</a>
+				  </div>
+<!-- 				  <div class="two columns">
+					  <a href="https://github.com/hkust-vgd/scanobjectnn.git">Code</a>
+				  </div> -->
+<!-- 				  <div class="two columns">
+					  <a href="data/poster.pdf">Poster</a>
+				  </div> -->
+				</div>
 
-    </div>
-  </body>
+        <div class="row">
+          <div class="two columns">
+            <br>
+            <a href="https://github.com/hkust-vgd/scanobjectnn.git">Code</a>
+          </div>        
+        </div>
+
+				<br>
+				<div class="row">
+				  <div class="two columns">
+					  <a href="https://gohkust-my.sharepoint.com/:f:/g/personal/saikit_ust_hk/EqRFLP5XEihCt_PFIHyPNO8BsKb7r8S5V5ELaCqk7UdDTQ?e=FX2OPF"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 256px;" src="images/perturbations3.png"></a>
+				  </div>		  
+				</div>
+				<div class="row">
+					<p><b>ScanObjectNN data</b>
+					<br>
+					Link: <a href="https://gohkust-my.sharepoint.com/:f:/g/personal/saikit_ust_hk/EqRFLP5XEihCt_PFIHyPNO8BsKb7r8S5V5ELaCqk7UdDTQ?e=FX2OPF">Download here</a>
+					</p>
+				</div>
+            </div>
+        </div>
+
+		<!-- -->
+	<div class="section">
+          <h5>Citation</h5> 
+  <pre style="margin:0"><code>@inproceedings{uy-scanobjectnn-iccv19,
+      title = {Revisiting Point Cloud Classification: A New Benchmark Dataset and Classification Model on Real-World Data},
+      author = {Mikaela Angelina Uy and Quang-Hieu Pham and Binh-Son Hua and Duc Thanh Nguyen and Sai-Kit Yeung},
+      booktitle = {International Conference on Computer Vision (ICCV)},
+      year = {2019}
+  }</code></pre>    			
+		</div>
+		
+        <!-- -->
+        <br> 
+        
+  <div class="section">
+      <h5>Acknowledgements</h5>            
+      <p>
+			We would like to sincerely thank Tan Sang Ha, Fan Wai Shan, Xu Ting Ting, Loh Pie Huan, Luong Van An, Ng Shi Xian Bryden, Li Jingxin and Chiz Huang for helping in the part annotations.
+			</p>
+			
+			<p>
+			This research project is partially sup- ported by an internal grant from HKUST (R9429).
+      </p>
+  </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function(){
+        /*
+        var bibName = ["Pointwise"];
+
+        // Add click event for bibtex links
+        for (var i = 0; i < bibName.length; ++i) {
+            $("#abib" + bibName[i]).click(function(e){
+
+                var abib = event.target.id; // <a> that fires the event
+                var bib = abib.replace("abib", "bib");
+
+                $("#"+bib).toggle(100);
+
+                // Scroll to the code position
+                $('html, body').animate({
+                    scrollTop: $("#"+bib).offset().top
+                }, 100);
+
+                // Cancel the default action (jump to page top due to link clicked)
+                e.preventDefault();
+            });
+
+            // Hide at start
+            $("#bib" + bibName[i]).hide();
+        }
+        */
+    });
+  </script>
+
+  <!-- Disqus comment count-->
+  <script id="dsq-count-scr" src="http://scenenn.disqus.com/count.js" async></script>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
