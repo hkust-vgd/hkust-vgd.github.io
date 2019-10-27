@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.34de6062.chunk.css",
+    "main.js": "./static/js/main.f856e962.chunk.js",
+    "main.js.map": "./static/js/main.f856e962.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.b71c1fa4.js",
+    "runtime-main.js.map": "./static/js/runtime-main.b71c1fa4.js.map",
+    "static/js/2.4be87f70.chunk.js": "./static/js/2.4be87f70.chunk.js",
+    "static/js/2.4be87f70.chunk.js.map": "./static/js/2.4be87f70.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.e4912d1f5666190c9076300f2b373a59.js": "./precache-manifest.e4912d1f5666190c9076300f2b373a59.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "./static/css/main.34de6062.chunk.css.map",
+    "static/media/instance.png": "./static/media/instance.11d524d7.png",
+    "static/media/scanobjectnn.png": "./static/media/scanobjectnn.09fbed23.png",
+    "static/media/scanobjectnn_parts.png": "./static/media/scanobjectnn_parts.28953eb6.png",
+    "static/media/semantic.png": "./static/media/semantic.4aecc5a6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b71c1fa4.js",
+    "static/js/2.4be87f70.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.f856e962.chunk.js"
+  ]
+}
