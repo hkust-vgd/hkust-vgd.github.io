@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LCD: Learned Cross-Domain Descriptors for 2D-3D Matching</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/skeleton.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131017488-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131017488-1');
+    </script>
+  </head>
+  <body>
+    <div class="container">
+
+      <h4 align="center">LCD: Learned Cross-Domain Descriptors for 2D-3D Matching</h4>
+
+      <p align="center">
+        <a class="author" href="https://pqhieu.github.io/">Quang-Hieu Pham</a><sup><small>1</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="author" href="https://mikacuy.github.io/">Mikaela Angelina Uy</a><sup><small>2</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="author" href="https://sonhua.github.io/">Binh-Son Hua</a><sup><small>3</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="author" href="https://ducthanhnguyen.weebly.com/">Duc Thanh Nguyen</a><sup><small>4</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        <a class="author" href="http://web.mit.edu/gemmar/www/">Gemma Roig</a><sup><small>5</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="author" href="http://www.saikit.org/">Sai-Kit Yeung</a><sup><small>6</small></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+
+      <p align="center">
+        <sup><small>1</small></sup>Singapore University of Technology and Design&nbsp;&nbsp;&nbsp;&nbsp;
+        <sup><small>2</small></sup>Stanford University&nbsp;&nbsp;&nbsp;&nbsp;
+        <sup><small>3</small></sup>The University of Tokyo&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        <sup><small>4</small></sup>Deadkin University&nbsp;&nbsp;&nbsp;&nbsp;
+        <sup><small>5</small></sup>Geothe University of Frankfrut am Main&nbsp;&nbsp;&nbsp;&nbsp;
+        <sup><small>6</small></sup>Hong Kong University of Science and Technology
+      </p>
+
+      <p align="center">
+        AAAI Conference on Artificial Intelligence, 2020. <strong>Oral</strong>
+      </p>
+
+      <figure>
+        <img src="images/p2pnet.jpeg">
+        <figcaption align="justify">
+          <b>Our proposed network consists of a 2D auto-encoder and a 3D auto-encoder.</b>
+          The input image and point cloud data is reconstructed with a photometric and a Chamfer loss, respectively.
+          The reconstruction losses ensures features in the embedding to be discriminative and representative.
+          The similarity between the 2D embedding and the 3D embedding is further regularized by a triplet loss.
+          Diagram notation: <tt>fc</tt> for fully-connected, <tt>conv/deconv(kernel_size, out_dim, stride, padding)</tt> for convolution and deconvolution, respectively.
+          Each convolution and deconvolution is followed by a ReLU activation and a batch normalization by default.
+        </figcaption>
+      </figure>
+      <hr>
+
+      <h5>Abstract</h5>
+      <p align="justify">
+        In this work, we present a novel method to learn a local cross-domain descriptor for 2D image and 3D point cloud matching.
+        Our proposed method is a dual auto-encoder neural network that maps 2D and 3D input into a shared latent space representation.
+        We show that such local cross-domain descriptors in the shared embedding are more discriminative than those obtained from individual training in 2D and 3D domains.
+        To facilitate the training process, we built a new dataset by collecting ≈ 1.4 millions of 2D-3D correspondences with various lighting conditions and settings from publicly available RGB-D scenes.
+        Our descriptor is evaluated in three main experiments: 2D-3D matching, cross-domain retrieval, and sparse-to-dense depth estimation.
+        Experimental results confirm the robustness of our approach as well as its competitive performance not only in solving cross-domain tasks but also in being able to generalize to solve sole 2D and 3D tasks.
+      </p>
+      <hr>
+
+      <h5>Applications</h5>
+      <figure>
+        <img src="images/2dmatch.jpeg" style="max-width: 400px;" class="center">
+        <figcaption align="justify">
+          <b>Qualitative image matching comparison between SIFT and our proposed descriptor.</b>
+          Our descriptor can correctly identify features from the wall and the refrigerator, while SIFT fails to differentiate them.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/registration.jpeg" style="max-width: 800px;" class="center">
+        <figcaption align="justify">
+          <b>Qualitative geometric registration results on the 3DMatch benchmark.</b>
+          Our method is able to successfully align pair of fragments in different challenging scenarios by matching local 3D descriptors, while 3DMatch fails in cases when there are ambiguities in geometry.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/retrieval.jpeg" style="max-width: 500px;" class="center">
+        <figcaption align="justify">
+          <b>Top-3 retrieval results of the 2D-3D place recognition task using our descriptor.</b>
+          Our task is to find the corresponding 3D geometry submap(s) in the database given a query 2D image.
+          Green/red borders mark correct/incorrect retrieval.
+          It can be seen that our learned cross-domain descriptor are highly effective in this 2D-to-3D retrieval task.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/depth.jpeg" style="max-width: 400px;" class="center">
+        <figcaption align="justify">
+          <b>Sparse-to-dense depth estimation results.</b>
+          Inputs are a RGB image and 2048 sparse depth samples.
+          Our network estimates dense depth map by reconstructing local 3D points.
+        </figcaption>
+      </figure>
+
+      <hr>
+
+      <h5>Materials</h5>
+      <div class="row">
+        <div class="two columns" align="center">
+          <a href="https://arxiv.org/abs/1804.00257"><b>[Paper]</b></a><br>
+          <img class="layered-paper material u-max-full-width" style="max-width: 160px;" src="images/paper.jpeg">
+        </div>
+        <div class="two columns" align="center">
+          <a href="#"><b>[Dataset]</b></a></br>
+        </div>
+        <div class="two columns" align="center">
+          <a href="https://github.com/hkust-vgd/lcd"><b>[Code]</b></a></br>
+        </div>
+      </div>
+      <hr>
+
+      <h5>Citation</h5>
+<pre><code>@inproceedings{pham2020lcd,
+  title = {{LCD}: {L}earned cross-domain descriptors for 2{D}-3{D} matching},
+  author = {Pham, Quang-Hieu and Uy, Mikaela Angelina and Hua, Binh-Son and Nguyen, Duc Thanh and Roig, Gemma and Yeung, Sai-Kit},
+  booktitle = {AAAI Conference on Artificial Intelligence},
+  year = 2020
+}</code></pre>
+
+      <hr>
+      <h5>Acknowledgements</h5>
+      <p>
+        This research project is partially supported by an internal grant from
+        HKUST (R9429).
+      </p>
+    </div>
+  </body>
+</html>
