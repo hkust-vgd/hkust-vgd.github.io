@@ -1,20 +1,39 @@
+@font-face {
+    font-family: "Ideal Sans";
+    src: url("../../fonts/Ideal Sans/IdealSans-Book-Pro.otf") format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ideal Sans";
+    src: url("../../fonts/Ideal Sans/IdealSans-Medium-Pro.otf") format("opentype");
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Operator Mono";
+    src: url("../../fonts/Operator Mono/OperatorMono-Book.otf") format("opentype");
+    font-display: swap;
+}
+
 strong {
     color: #c82829;
 }
 
 body {
     margin: 15px 0;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Ideal Sans", sans-serif;
     color: #444;
     background: #fff;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: "IBM Plex Sans", serif;
+    font-family: "Ideal Sans", serif;
 }
 
 tt {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Operator Mono", monospace;
 }
 
 code {
@@ -22,7 +41,7 @@ code {
     border: none;
     border-left: 3px solid #708090;
     padding: 0;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Operator Mono", monospace;
     font-size: 1.5rem;
 }
 
