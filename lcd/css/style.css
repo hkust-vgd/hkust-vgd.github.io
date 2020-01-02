@@ -1,16 +1,16 @@
 body {
     margin: 15px 0;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #444;
     background: #fff;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: "Josefin Sans", serif;
+    font-family: "Rubik", serif;
 }
 
 tt {
-    font-family: "Fira Mono";
+    font-family: "Roboto Mono";
 }
 
 code {
@@ -18,7 +18,7 @@ code {
     border: none;
     border-left: 3px solid #708090;
     padding: 0;
-    font-family: "Fira Mono", monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 a {
