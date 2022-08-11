@@ -1,0 +1,127 @@
+.publication p {
+    margin: 0;
+    padding: 0;
+}
+
+.publication ul {
+    list-style: none;
+}
+
+.paper.title {
+    font-weight: bold;
+}
+
+.paper.venue {
+    /*font-style: italic;*/
+}
+
+/* Pop-up handling. Thanks to http://inspirationalpixels.com/tutorials/custom-popup-modal */
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+}
+ 
+/* Inner */
+.popup-inner {
+    max-width:700px;
+    width:90%;
+    height: 400px;
+    padding:20px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+ 
+/* Close Button */
+.popup-close {
+    width:30px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+ 
+.popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}
+
+.grey-icon {
+  color: #4A4A4A;
+  font-size: 48px !important;
+}
+
+a.red {
+  color: #AA3333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.red:hover {
+  color: #BB3333; 
+  text-decoration: underline;
+}
+
+ul.news li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.news li:before {
+    position: relative;
+    
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    top: 3px;
+    padding: 0 16px 0 0;
+    content: "navigate_next";
+    
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+a.simple {
+    text-decoration:none;
+}

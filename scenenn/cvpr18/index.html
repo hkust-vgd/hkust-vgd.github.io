@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Pointwise Convolutional Neural Networks</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google icon
+  -------------------------------------------------- -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Analytics
+  -------------------------------------------------- -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86869673-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+  <style>
+    img {
+        display: block;
+    }
+    
+    .column-50 {
+        float: left;
+        width: 50%;
+    }
+    .row-50:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .floating-teaser {
+        float: left;
+        width: 30%;
+        text-align: center;
+        padding: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+
+        <h4 style="text-align:center">Pointwise Convolutional Neural Networks</h4>
+
+        <p align="center", style="margin-bottom:12px;"><a class="simple" href="http://sonhua.github.io">Binh-Son Hua</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minh-Khoi Tran<sup>2</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="simple" href="http://people.sutd.edu.sg/~saikit/">Sai-Kit Yeung</a><sup>2</sup></p>
+
+        <p align="center" style="margin-bottom:20px;">
+        <sup>1</sup>The University of Tokyo
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>2</sup>Singapore University of Technology and Design
+		</p>
+
+		<p align="center">Computer Vision and Pattern Recognition (CVPR) 2018</p>
+        <figure>
+            <img src="images/network.png" style="width:100%"></img>
+            <br>
+        </figure>
+        <br>
+        <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+            <div class="floating-teaser"> 
+              <img src="images/teaser.png" style="width:100%"></img>
+              <br>
+              <center><b>Point-wise convolution</b></center>
+            </div>
+            <p align="justify"> 
+			<br>
+			Deep learning with 3D data such as reconstructed point
+			clouds and CAD models has received great research interests
+			recently. However, the capability of using point clouds
+			with convolutional neural network has been so far not fully
+			explored. In this paper, we present a convolutional neural
+			network for semantic segmentation and object recognition
+			with 3D point clouds. At the core of our network is pointwise
+			convolution, a new convolution operator that can be
+			applied at each point of a point cloud. Our fully convolutional
+			network design, while being surprisingly simple to
+			implement, can yield competitive accuracy in both semantic
+			segmentation and object recognition task.
+            </p>
+            
+        </div>
+
+        <!-- ------------------------------------- -->
+
+        <div class="section">
+            <h5>Materials</h5>            
+            <div class="container" style="width:95%">
+				<!-- Icon row -->
+				<div class="row">
+				  <div class="two columns">
+					  <a href="https://arxiv.org/pdf/1712.05245"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="images/page01.png"></a>
+				  </div>
+				  <div class="two columns">
+					  <a href="data/supp_training.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 116px;" src="images/supp.png"></a>
+				  </div>
+				  <div class="two columns">
+					  <a href="https://github.com/scenenn/pointwise"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 116px;" src="images/code.png"></a>
+				  </div>		  
+				  <div class="two columns">
+					  <a href="data/poster.pdf"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 180px;" src="images/poster.png"></a>
+				  </div>              
+				</div>
+				<!-- Link row -->
+				<div class="row">
+				  <div class="two columns">                  
+					  <a href="https://arxiv.org/pdf/1712.05245">Paper</a>
+				  </div>
+				  <div class="two columns">                  
+					  <a href="data/supp_training.pdf">Supplemental</a>
+				  </div>
+				  <div class="two columns">
+					  <a href="https://github.com/scenenn/pointwise">Code</a>
+				  </div>
+				  <div class="two columns">
+					  <a href="data/poster.pdf">Poster</a>
+				  </div>
+				</div>
+				<br>
+				<div class="row">
+				  <div class="two columns">
+					  <a href="data/scenenn_seg.zip"><img style="border: 1px solid #ddd; border-radius: 4px; padding: 6px; width: 256px;" src="images/scenenn.png"></a>
+				  </div>		  
+				</div>
+				<div class="row">
+					<p><b>SceneNN data</b>: 76 scenes re-annotated with NYU-D v2 <a href="data/nyu_color.xml">40 classes</a>. <br>56 scenes for training and 20 scenes for testing scene semantic segmentation task.
+					<br>
+					Link 1: <a href="data/scenenn_seg_76.zip">SUTD</a>
+					<br>
+					Link 2: <a href="https://drive.google.com/file/d/1DcKKrdzirUjKejjasexGdU0ECMpIXCD3/view">Google Drive</a>
+					</p>
+				</div>
+            </div>
+        </div>
+
+		<!-- ------------------------------------- -->
+		<div class="section">
+            <h5>Citation</h5> 
+<pre style="margin:0"><code>@inproceedings{hua-pointwise-cvpr18,
+    title = {Pointwise Convolutional Neural Networks},
+    author = {Binh-Son Hua and Minh-Khoi Tran and Sai-Kit Yeung},
+    booktitle = {Computer Vision and Pattern Recognition (CVPR)},
+    year = {2018}
+}</code></pre>    			
+		</div>
+		
+        <!-- ------------------------------------- -->
+        <br> 
+        
+        <div class="section">
+            <h5>Acknowledgements</h5>            
+            <p>
+			We thank Quang-Hieu Pham for helping with the 2D-to-3D semantic segmentation experiment
+			and proofreading the paper, Quang-Trung Truong and Benjamin Kang Yue Sheng for their kind support for the neural
+			network training experiments.
+			</p>
+			
+			<p>
+			Binh-Son Hua and Sai-Kit Yeung are supported by the
+			SUTD Digital Manufacturing and Design Centre which is
+			supported by the Singapore National Research Foundation
+			(NRF). Sai-Kit Yeung is also supported by Singapore MOE
+			Academic Research Fund MOE2016-T2-2-154, Heritage Research Grant of the National Heritage Board, Singapore, and
+			Singapore NRF under its IDM Futures Funding Initiative and
+			Virtual Singapore Award No. NRF2015VSGAA3DCM001-
+			014.
+            </p>
+        </div>
+  </div>
+
+  <script>
+
+    $(document).ready(function(){
+        /*
+        var bibName = ["Pointwise"];
+
+        // Add click event for bibtex links
+        for (var i = 0; i < bibName.length; ++i) {
+            $("#abib" + bibName[i]).click(function(e){
+
+                var abib = event.target.id; // <a> that fires the event
+                var bib = abib.replace("abib", "bib");
+
+                $("#"+bib).toggle(100);
+
+                // Scroll to the code position
+                $('html, body').animate({
+                    scrollTop: $("#"+bib).offset().top
+                }, 100);
+
+                // Cancel the default action (jump to page top due to link clicked)
+                e.preventDefault();
+            });
+
+            // Hide at start
+            $("#bib" + bibName[i]).hide();
+        }
+        */
+    });
+  </script>
+
+  <!-- Disqus comment count
+  -------------------------------------------------- -->
+  <script id="dsq-count-scr" src="http://scenenn.disqus.com/count.js" async></script>
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>SceneNN</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/scenenn.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <!-- Google icon
+    -------------------------------------------------- -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- jQuery
+    -------------------------------------------------- -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/libs/jquery-ui.min.js"></script>
+
+
+    <!-- WebGL ----------------------------------------------------->
+    <script src="js/webgl/three.js"></script>
+    <script src="js/webgl/PLYLoader.js"></script>
+    <script src="js/webgl/PLYExporter.js"></script>
+    <script src="js/webgl/Detector.js"></script>
+    <script src="js/webgl/XMLLoader.js"></script>
+    <script src="js/webgl/XMLExporter.js"></script>
+    <script src="js/webgl/ColorExporter.js"></script>
+    <script src="js/webgl/ColorLoader.js"></script>
+    <script src="js/webgl/LabelExporter.js"></script>
+    <script src="js/webgl/LabelLoader.js"></script>
+    <script src="js/webgl/OrbitControls.js"></script>
+    <script src="js/webgl/THREE.MeshLine.js"></script>
+    <script src="js/libs/dat.gui.js"></script>
+    <script src="js/libs/helpers.js"></script>
+    <script src="js/libs/stats.min.js"></script>
+    <script src="js/libs/jszip.min.js"></script>
+    <script src="js/libs/js.cookie-2.2.0.min.js"></script>
+
+    <script src="js/segmentation/meshObject.js"></script>
+    <script src="js/segmentation/segmentMesh.js"></script>
+    <script src="js/segmentation/universe.js"></script>
+    <script src="js/segmentation/utils.js"></script>
+
+    <script>
+        var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme",
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme",
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme",
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+        ];
+    </script>
+
+</head>
+
+<body>
+
+<div id="infoButton" class="ui-button" role="button"></div>
+
+<!-- indoor scene type dropdown menu -->
+<div class="container">
+    <h3>An Interactive Tool for 3D Scene Segmentation and Annotation</h3>
+    <div id="scene_category"></div>
+</div>
+
+<div id="glcanvas_viewer">
+    <div id="guicontrol" style="position: absolute; right: 0;"></div>
+    <div id="info"></div>
+    <div id="downloadscene-btn"></div>
+    <div id="runMRF-btn"></div>
+    <div id="annotation-mode"></div>
+</div>
+
+<!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+    <div id="teaser" class="container" style="width:100%; margin:0; padding:0"></div>
+</div>
+
+<script src="js/webgl/WebGLApp.js"></script>
+<script src="js/mainmenu.js"></script>
+
+<!-- End Document –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- InforBox -->
+<div id="infoBox" title="Information" class="ui-dialog-content ui-widget-content" style="min-height: 100px; max-height: none; height: auto;">
+    <p> - Hold Shift and drag your mouse while left button mouse is being pressed to merge</p>
+    <p>- Hold Ctrl and drag your mouse while left button mouse is being pressed to extract</p>
+    <p>- Press 'Z' to Undo </p>
+    <p>- Press 'L' to toggle lighting </p>
+    <p>- Press 'D' to show/hide all annotation</p>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width: 400px">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4> Create new layer</h4>
+            </div>
+            <div class="modal-body" style="padding:20px">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="layername"> Layer name</label>
+                        <input type="text" class="form-control" id="layername" placeholder="Enter layer name">
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1"> Annotation mode</label>
+                        <select class="form-control" id="sel1">
+                            <option value="freestyle">Freestyle</option>
+                            <option value="class">Class</option>
+                        </select>
+                    </div>
+                    <a href="#" onclick="createBtnInModal()" class="btn btn-success btn-block "><span class="glyphicon glyphicon glyphicon-plus-sign"></span> Create</a>
+                </form>
+            </div>
+            <div class="modal-footer" style="background-color: #f9f9f9;">
+                <button type="submit" class="btn btn-danger pull-right " data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function()
+    {
+        $("#infoBox")
+            .css(
+                {
+                    "background":"rgba(255,255,255,0.5)"
+                })
+            .dialog({ autoOpen: false,
+                show: { effect: 'fade', duration: 200 },
+                hide: { effect: 'fade', duration: 200 }
+            });
+
+    });
+
+    function createBtnInModal(){
+
+        var modalSelector = $("#myModal");
+
+        var layerName = modalSelector.find("#layername").val();
+        var annoMode = modalSelector.find("#sel1").val();
+
+        if (layerName === "")
+            return;
+
+        var newLayer = new Layer(gGraphCutData.labels, gGraphCutData.colors, gGraphCutAnnoData);
+        newLayer.layerName = layerName;
+        newLayer.annotationMode = annoMode;
+        gGuiControls.saveAsLayer(newLayer.layerID, newLayer.layerName);
+        gLayerManager.add(newLayer);
+        gLayerManager.showByLayerID(newLayer.layerID);
+
+        modalSelector.modal('hide');
+        updateAnnotationModeInfo();
+
+    }
+
+</script>
+
+</body>
+</html>

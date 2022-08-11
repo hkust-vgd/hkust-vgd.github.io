@@ -1,0 +1,17 @@
+{
+  "name": "scenenn_webgl",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-inject": "^4.3.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-yuicompressor": "0.0.3",
+    "jszip": "^3.1.4",
+    "require-dir": "^0.3.2"
+  }
+}

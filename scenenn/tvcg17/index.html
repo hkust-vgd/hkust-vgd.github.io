@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>A Robust 3D-2D Interactive Tool for Scene Segmentation and Annotation</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+        <div class="container">
+    	<h3>A Robust 3D-2D Interactive Tool for Scene Segmentation and Annotation</h3>
+
+    	<p><a href="http://ducthanhnguyen.weebly.com">Duc Thanh Nguyen</a><sup>1<span>&#10034;</span></sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	   <a href="http://sonhua.github.io">Binh-Son Hua</a><sup>2<span>&#10034;</span></sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	   <a href="https://www.cs.umb.edu/~craigyu/">Lap-Fai Yu</a><sup>3</sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	   <a href="http://people.sutd.edu.sg/~saikit/">Sai-Kit Yeung</a><sup>2</sup>
+        </p>
+
+    	<p style="margin-bottom:20px;">
+    	<sup>1</sup>Deakin University
+    	<span style="display:inline-block; width: 32px"></span>
+    	<sup>2</sup>Singapore University of Technology and Design
+    	<span style="display:inline-block; width: 32px"></span>
+    	<sup>3</sup>University of Massachusetts Boston
+    	<span style="display:inline-block; width: 32px"></span>
+    	<span style="display:inline-block; color: #888888">(<sup><span>&#10034;</span></sup>Equal contribution)</span>
+    	</p>
+        </div>
+
+        <br>
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-5">
+    	<p>Recent advances of 3D acquisition devices have enabled large-scale acquisition of 3D scene data. Such data, if completely and well annotated, can serve as useful ingredients for a wide spectrum of computer vision and graphics works such as data-driven modeling and scene understanding, object detection and recognition. However, annotating a vast amount of 3D scene data remains challenging due to the lack of an effective tool and/or the complexity of 3D scenes (e.g. clutter, varying illumination conditions).
+    	</p>
+    	<p>
+    	This paper aims to build a robust annotation tool that effectively and conveniently enables the segmentation and annotation of massive 3D data. Our tool works by coupling 2D and 3D information via an interactive framework, through which users can provide high-level semantic annotation for objects. We have experimented our tool and found that a typical indoor scene could be well segmented and annotated in less than 30 minutes by using the tool, as opposed to a few hours if done manually.
+    	</p>
+    	<p>
+    	This tool has been used to annotate over 100 scenes in SceneNN, a RGB-D scene mesh dataset. More details about the dataset at <a href="http://www.scenenn.net">www.scenenn.net</a>.
+    	</p>
+        </div>
+
+        <div class="col-sm-7">
+    	<video id="my-video" preload="auto" poster="../video/annotation.png" style="max-width:100%; height:auto">
+    		<source src="../video/annotation.mp4" type="video/mp4">
+    	</video>
+        </div>
+        </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="../pdf/annotation_tvcg17.pdf">
+                    <img src="images/collage.jpg" class="img-responsive img-rounded" style="border: 1px solid #DDDDDD;"></img>
+                    </a>
+                </div>
+                <div class="col-sm-9">
+                    <pre id="bibTool">
+                    <code>
+@article{anno-tvcg17,
+    author = {Thanh Nguyen, Duc and Hua, Binh-Son and Yu, Lap-Fai and Yeung, Sai-Kit},
+    title = {A Robust 3D-2D Interactive Tool for Scene Segmentation and Annotation},
+    journal = {IEEE Transactions on Visualization and Computer Graphics (TVCG)},
+    year = {2017}
+}
+                    </code>
+                    </pre>
+                    <!-- Links -->
+                    <a href="../pdf/annotation_tvcg17.pdf">Paper</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://github.com/scenenn/sese">Executable</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../webgl/index.html">WebGL</a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <h4>Acknowledgement</h4>
+            <p>We thank Tan-Sang Ha and Quang-Trung Truong for helping with the development of the WebGL version of the tool.</p>
+
+            <p>We also thank Fangyu Lin and Quang-Hieu Pham for assisting with data capture and Guoxuan Zhang for the early version of the tool.</p>
+
+            <p>Binh-Son Hua is supported by the SUTD Digital Manufacturing and Design (DManD) Centre which is supported by the National Research Foundation (NRF) of Singapore.</p>
+
+            <p>Lap-Fai Yu is supported by the Joseph P. Healey Research Grant Program provided by the Office of the Vice Provost for Research and Strategic Initiatives & Dean of Graduate Studies of UMass Boston. This research is also supported by the National Science Foundation under award number 1565978. We acknowledge NVIDIA Corporation for graphics card donation.</p>
+
+            <p>Sai-Kit Yeung is supported by Singapore MOE Academic Research Fund MOE2016-T2-2-154 and Supported by Heritage Research Grant of the National Heritage Board, Singapore. We acknowledge the support of the SUTD Digital Manufacturing and Design (DManD) Centre which is supported by the National Research Foundation (NRF) of Singapore. This research is also supported by the National Research Foundation, Prime Minister's Office, Singapore under its IDM Futures Funding Initiative and its Environmental & Water Technologies Strategic Research Programme and administered by the PUB, Singapore’s National Water Agency. This material is based on research/work supported in part by the National Research Foundation under Virtual Singapore Award No. NRF2015VSG-AA3DCM001-014.
+            </p>
+        </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <script>
+        $(document).ready(function(){
+            // When video is hovered, show the controls
+            $('#my-video').hover(function() {
+                if (this.hasAttribute("controls")) {
+                    this.removeAttribute("controls")
+                } else {
+                    this.setAttribute("controls", "controls")
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

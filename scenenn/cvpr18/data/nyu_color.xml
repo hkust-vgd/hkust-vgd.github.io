@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colormap>
+    <class id="0" text="unknown" color="96 96 96" />
+    <class id="1" text="wall" color="198 213 181" />
+    <class id="2" text="floor" color="164 181 215" />
+    <class id="3" text="cabinet" color="97 57 195" />
+    <class id="4" text="bed" color="90 200 86" />
+    <class id="5" text="chair" color="224 71 40" />
+    <class id="6" text="sofa" color="213 201 63" />
+    <class id="7" text="table" color="192 217 128" />
+    <class id="8" text="door" color="212 150 51" />
+    <class id="9" text="window" color="67 35 119" />
+    <class id="10" text="bookshelf" color="97 113 222" />
+    <class id="11" text="picture" color="161 225 66" />
+    <class id="12" text="counter" color="112 224 170" />
+    <class id="13" text="blinds" color="227 60 126" />
+    <class id="14" text="desk" color="74 152 112" />
+    <class id="15" text="shelves" color="186 73 225" />
+    <class id="16" text="curtain" color="122 218 223" />
+    <class id="17" text="dresser" color="215 70 84" />
+    <class id="18" text="pillow" color="89 148 207" />
+    <class id="19" text="mirror" color="167 71 33" />
+    <class id="20" text="floor mat" color="180 108 207" />
+    <class id="21" text="clothes" color="101 130 50" />
+    <class id="22" text="ceiling" color="214 105 165" />
+    <class id="23" text="books" color="48 65 36" />
+    <class id="24" text="fridge" color="202 153 211" />
+    <class id="25" text="television" color="137 99 42" />
+    <class id="26" text="paper" color="96 92 156" />
+    <class id="27" text="towel" color="225 131 87" />
+    <class id="28" text="shower curtain" color="49 32 65" />
+    <class id="29" text="box" color="212 126 132" />
+    <class id="30" text="whiteboard" color="130 53 111" />
+    <class id="31" text="person" color="212 176 127" />
+    <class id="32" text="night stand" color="157 48 85" />
+    <class id="33" text="toilet" color="94 153 161" />
+    <class id="34" text="sink" color="125 44 38" />
+    <class id="35" text="lamp" color="220 182 191" />
+    <class id="36" text="bathtub" color="74 35 37" />
+    <class id="37" text="bag" color="207 62 178" />
+    <class id="38" text="structure" color="63 84 106" />
+    <class id="39" text="furniture" color="110 123 97" />
+    <class id="40" text="prop" color="140 99 101" />
+</colormap>

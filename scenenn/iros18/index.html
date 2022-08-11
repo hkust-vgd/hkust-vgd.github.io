@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Creating and Understanding 3D Annotated Scene Meshes</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+    <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+    <style>
+      img {
+          display: block;
+      }
+      figure {
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+          cursor: pointer;
+      }
+      .hover figure img {
+          -webkit-transform: rotate(0) scale(1);
+          transform: rotate(0) scale(1);
+
+      }
+      .hover figure:hover img {
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+          -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+      }
+	  .grey-icon {
+		  color: #4A4A4A;
+		  font-size: 48px !important;
+	  }
+    </style>
+  </head>
+  <body>
+
+    <!-- Header section ------------------------------------------------------->
+    <div class="container">
+
+        <h5>IROS 2018 Tutorial</h5>
+    	<h3>Creating and Understanding 3D Annotated Scene Meshes</h3>
+
+    	<p><a href="">Zhiyuan Zhang</a><sup>1</sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		   <a href="http://sonhua.github.io">Binh-Son Hua</a><sup>2</sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a href="http://ducthanhnguyen.weebly.com">Duc Thanh Nguyen</a><sup>3</sup>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a href="https://www.cs.umb.edu/~craigyu/">Lap-Fai Yu</a><sup>4</sup>
+    	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	   <a href="http://www.saikit.org/">Sai-Kit Yeung</a><sup>5</sup>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <a href="http://danielarus.csail.mit.edu/">Daniela Rus</a><sup>6</sup>
+        </p>
+
+    	<p style="margin-bottom:20px;">
+    	<sup>1</sup>Singapore University of Technology and Design
+    	<span style="display:inline-block; width: 32px"></span>
+		<sup>2</sup>The University of Tokyo
+    	<span style="display:inline-block; width: 32px"></span>
+        <sup>3</sup>Deakin University
+    	<span style="display:inline-block; width: 32px"></span>
+		<br>
+    	<sup>4</sup>University of Massachusetts Boston
+    	<span style="display:inline-block; width: 32px"></span>
+        <sup>5</sup>The Hong Kong University of Science and Technology
+    	<span style="display:inline-block; width: 32px"></span>
+        <sup>6</sup>Massachusetts Institute of Technology
+    	<span style="display:inline-block; width: 32px"></span>
+    	</p>
+    </div>
+
+    <!-- Abstract and ToC ----------------------------------------------------->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- Abstract -->
+                <p>
+                Capturing, reconstructing, and annotating 3D scenes from real world are often known as daunting tasks in preparing a high-quality dataset for 3D scene understanding despite recent advances in color and depth sensors. In contrast to 2D image datasets which have been readily and widely available, 3D scene mesh datasets for training and testing robotics algorithms have been scarce since creating such datasets often requires huge efforts in building a robust 3D scene reconstruction and annotation pipeline.
+                </p>
+
+                <p>
+                This tutorial aims to equip its audience with general knowledge about the state-of-the-art approaches in 3D scene reconstruction and annotation, as well as the technical and implementation knowledge about how to build a complete pipeline to reconstruct and annotate 3D scenes. Several topics for building the pipeline will be extensively discussed, including data capturing, real-time and offline reconstruction, automatic and interactive annotation, quality control and benchmarking metrics. A WebGL annotation tool for 3D scene segmentation will also be demonstrated during the tutorial. Finally, as an application of the annotated scene data, we will discuss the state-of-the-art techniques in 3D deep learning, particularly in deep learning for 3D point clouds. 
+                </p>
+
+            </div>
+
+            <div class="col-sm-4">
+              <!-- Teaser -->
+              <div id="teaser" class="container" style="margin:0; padding:0">
+
+              </div>
+            </div>
+        </div>
+	</div>
+
+    <!-- Schedule ------------------------------------------------------------->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="container">
+					<h4>Tentative Schedule</h4>
+					<p>Monday, Oct 01, 2018</p>
+					<ul>
+						<li>14:30		Overview of Pipeline			</li>	
+						<li>14:45		3D Scene Reconstruction			</li>
+						<li>15:15		3D Scene Annotation			    </li>
+						<li>15:45		WebGL Demo					    </li>
+						<li>16:00		Tea Break                       </li>
+						<li>16:30 		Datasets and Applications		</li>
+						<li>17:00		3D Deep Learning				</li>
+						<li>17:30		Panel Discussion, Q&A           </li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Video ------------------------------------------------------------>
+			<div class="col-sm-9" style="padding-right: 0">
+				<video id="my-video" preload="auto" poster="./video/annotation.png" style="max-width:70%; height:auto; float:right;">
+					<source src="./video/annotation.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+		</div>
+		
+		<!-- Materials ------------------------------------------------------------>
+		<div class="row">
+			<div class="container">
+				<h4>Materials</h4>
+					
+					<div class="container">
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">looks_one</i>
+							<br>
+							<a href="pdf/1_opening.pdf">Overview</a>
+						</div>
+
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">looks_two</i>
+							<br>
+							<a href="pdf/2_reconstruction.pdf">3D Reconstruction</a>
+						</div>
+						
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">looks_3</i>
+							<br>
+							<a href="pdf/3_annotation.pdf">3D Annotation</a>
+						</div>
+						
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">looks_4</i>
+							<br>
+							<a href="pdf/4_dataset.pdf">Datasets</a>
+						</div>
+						
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">looks_5</i>
+							<br>
+							<a href="pdf/5_deep_learning.pdf">3D Deep Learning</a>
+						</div>
+					</div>
+				
+					<div class="container">
+						
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">cloud</i>
+							<br>
+							<a href="http://103.24.77.34:8080/scenenn/main/">Data</a>
+						</div>
+
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">create</i>
+							<br>
+							<a href="http://www.scenenn.net/webgl/">WebGL annotation tool</a>
+						</div>
+
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">create</i>
+							<br>
+							<a href="https://github.com/scenenn/sese">C++ annotation tool</a>
+						</div>
+					
+						<div class="col-sm-2">
+							<i class="material-icons grey-icon">bookmarks</i>
+							<br>
+							<a href="https://github.com/timzhang642/3D-Machine-Learning">3D Machine Learning</a>
+						</div>
+					</div>
+				
+			</div>		
+		</div>
+	</div>
+
+    <!-- Bio ------------------------------------------------------------------>
+    <div class="container">
+        <h4>Organizers</h4>
+		
+		<div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/zhiyuan.jpg"></img>
+            <p>
+            <b>Zhiyuan Zhang</b> is now a postdoctoral researcher at the Singapore University of Technology and Design. Before that, he worked as a staff researcher in Device Plus Lab of Lenovo from 2014 to 2017. He received his PhD degree from the National University of Singapore in 2015. His research interests include 3D Geometric understanding, Deep Learning on 3D Point Clouds, and 3D Biometrics. He has publications in Pattern Recognition, Computer Graphics Forum, Pacific Graphics and ICIP.
+            </p>
+        </div>
+		
+        <div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/binh_son.png"></img>
+            <p>
+            <b>Binh-Son Hua</b> is currently a postdoctoral researcher in The University of Tokyo. Before that, he was a postdoctoral researcher in Singapore University of Technology and Design. He received his PhD degree in Computer Science from National University of Singapore in 2015. His research interests are 3D reconstruction, 3D scene understanding, and physically based rendering. His recent works are published in both computer graphics and vision venues, including SIGGRAPH, Eurographics, TVCG, 3DV, and CVPR.
+            </p>
+        </div>
+
+        <div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/thanh.png"></img>
+            <p>
+            <b>Duc Thanh Nguyen</b> received his Ph.D. degree in Computer Science from the University of Wollongong, Australia, in 2012. Currently, he is a lecturer at the School of Information Technology, Deakin University, Australia. His research interests include Computer Vision and Pattern Recognition. Dr. Nguyen has published his work in highly-ranked publication venues in Computer Vision and Pattern Recognition such as the Journal of Pattern Recognition, CVPR, ICCV and ECCV. He also has served a technical program committee member of the IEEE Int. Conf. Image Process. (from 2012) and reviewers of the IEEE Trans. Intell. Transp. Syst., IEEE Trans. Image Process., IEEE Signal Processing Letters, Image and Vision Computing.
+            </p>
+        </div>
+
+        <div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/craig.jpg"></img>
+            <p>
+            <b>Lap-Fai (Craig) Yu</b> is an assistant professor at the University of Massachusetts at Boston. He obtained his PhD degree in computer science from UCLA in 2013. His research interests are in computer graphics and vision, especially in the topics of synthesizing and analysing 3D models from the perspectives of functionality, physics, intentionality and causality. He is the recipient of the Cisco Outstanding Graduate Research Award, the UCLA Dissertation Year Fellowship, the Sir Edward Youde Memorial Fellowship and the Award of Excellence from Microsoft Research. His research has been featured in New Scientist, the UCLA Headlines and newspapers internationally.  He regularly serves on the program committee of Eurographics, Pacific Graphics and IEEE Virtual Reality.
+            </p>
+        </div>
+
+        <div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/kit.jpg"></img>
+            <p>
+            <b>Sai-Kit Yeung</b> is currently an Associate Professor at the Division of Integrative Systems and Design (ISD) at the Hong Kong University of Science and Technology (HKUST). Before joining HKUST, he was an Assistant Professor at the Singapore University of Technology an Design (SUTD) and founded the Vision, Graphics and Computational Design (VGD) Group. During his time at SUTD, he was also a Visiting Assistant Professor at Stanford University and MIT. Prior to that, he had been a Postdoctoral Scholar in the Department of Mathematics, University of California, Los Angeles (UCLA). He was a visiting student at the Image Processing Research Group at UCLA in 2008 and the Image Sciences Institute, University Medical Center Utrecht, the Netherlands in 2007. He received his PhD degree in Electronic and Computer Engineering, MPhil degree in Bioengineering, and BEng degree (First Class Honors) from HKUST, respectively in 2009, 2005 and 2003.
+            Dr. Yeung's current research focus is primarily on 3D content reconstruction, understanding, creation, redesign and fabrication.
+            </p>
+        </div>
+
+        <div class="container">
+            <img align="left" style="width:120px; padding: 8px" src="images/daniela.jpg"></img>
+            <p>
+            <b>Daniela Rus</b> is the Andrew (1956) and Erna Viterbi Professor of Electrical Engineering and Computer Science and Director of the Computer Science and Artificial Intelligence Laboratory (CSAIL) at MIT. Rus’s research interests are in robotics, mobile computing, and data science. Rus is a Class of 2002 MacArthur Fellow, a fellow of ACM, AAAI, IEEE and RAS, and a member of the National Academy of Engineering, and the American Academy for Arts and Science. She earned her PhD in Computer Science from Cornell University. Prior to joining MIT, Rus was a professor in the Computer Science Department at Dartmouth College.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer --------------------------------------------------------------->
+    <div class="container">
+        <h4>Contact</h4>
+        <p>Please email us at scenenn@gmail.com if you have any comments and feedback. Thank you!</p>
+        <p class="text-right">Last update: Aug 06, 2018</p>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <script>
+      function show_scene_list() {
+          // Populate teaser images (a 3x4 grid of images)
+          var image_root = "images/";
+          var height = 2;
+          var width = 2;
+
+          // Change the scene ID here for other scenes
+          var images = ["076", 		"049",		"032",		"074"];
+
+          $("#teaser").empty();
+          for (var i = 0; i < height; ++i) {
+              var row = "<div class=\"row\" style=\"padding-bottom: 1%;\">";
+              for (var j = 0; j < width; ++j) {
+                  var id = images[i * width + j];
+                  var file = image_root + id + "/" + id + "_segmented.png";
+                  row += "<div class=\"col-sm-2 hover\">";
+                  // Change margin above to adjust gaps between columns
+                  row += "<figure><a href='./WebGLApp/index.html'><img id=\"" + id + "\" class=\"img-responsive\" src=\"" + file + "\"></img></a></figure>";
+                  row += "</div>";
+              }
+              row += "</div>"
+
+              $("#teaser").append(row);
+          }
+      }
+      $(document).ready(function(){
+          show_scene_list();
+      });
+    </script>
+	
+	<!-- For video plugin -->
+	<script>
+        $(document).ready(function(){
+            // When video is hovered, show the controls
+            $('#my-video').hover(function() {
+                if (this.hasAttribute("controls")) {
+                    this.removeAttribute("controls")
+                } else {
+                    this.setAttribute("controls", "controls")
+                }
+            });
+        });
+    </script>
+	
+  </body>
+</html>
