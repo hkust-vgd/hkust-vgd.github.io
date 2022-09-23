@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- Basic Page Needs
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Marine Dataset</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="MarineData_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FONT
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="MarineData_files/css.css" rel="stylesheet" type="text/css">
+
+
+    <!-- CSS
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="MarineData_files/normalize.css">
+    <link rel="stylesheet" href="MarineData_files/skeleton.css">
+    <!-- <link rel="stylesheet" href="MarineData_files/footable.standalone.min.css"> -->
+
+    <!-- Favicon
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="https://hkust-vgd.github.io/scanobjectnn/images/favicon.png">
+
+    <!-- Google icon -->
+    <link rel="stylesheet" href="MarineData_files/icon.css">
+
+    <!-- Analytics -->
+    <script async="" src="MarineData_files/analytics.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-86869673-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MarineData_files/screen.css" />
+
+    <link rel="stylesheet" href="MarineData_files/leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="MarineData_files/leaflet.markercluster/MarkerCluster.Default.css" />
+
+    <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+    <style>
+        img {
+            display: block;
+        }
+
+        .column-50 {
+            float: left;
+            width: 50%;
+        }
+
+        .row-50:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .floating-teaser {
+            float: left;
+            width: 30%;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .venue strong {
+            color: #99324b;
+        }
+
+        .benchmark {
+            width: 100%;
+            max-width: 960px;
+            overflow: scroll;
+            overflow-y: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Primary Page Layout
+     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+    <h4 style="text-align:center">Marine Video Kit: A New Marine Video Dataset <br/> for Content-based Analysis and Retrieval </h4>
+
+    <br>
+    <p>This webpage is updated on <strong>September 22nd 2022</strong>.</p>
+
+    <h5>Abstract</h5>
+    <p style="text-align: justify;">
+    Effective analysis of unusual domain specific video collections represents an important practical problem, where state-of-the-art
+    general purpose models still face limitations. Hence, it is desirable to
+    design benchmark datasets that challenge novel powerful models for specific domains with additional constraints. It is important to remember
+    that domain specific data may be noisier (e.g., endoscopic or underwater
+    videos) and often require more experienced users for effective search. In
+    this paper, we focus on single-shot videos taken from moving cameras in
+    underwater environments which constitute a nontrivial challenge for research purposes. The first shard of a new Marine Video Kit dataset is presented
+     to serve for video retrieval and other computer vision challenges.
+    In addition to basic meta-data statistics, we present several insights and
+    reference graphs based on low-level features as well as semantic annotations of selected keyframes. The analysis contains also experiments
+    showing limitations of respected general purpose models for retrieval.
+    </p>
+    
+    <h5>Selected Videos</h5>
+    <p>
+        Some marine videos are selected from the dataset.
+    </p>    
+
+    <div class="container" style="width:100%; margin:0; padding:0">
+
+        <style>
+            .video-mouseover {
+                -webkit-filter: brightness(100%);
+                -moz-filter: brightness(100%);
+                -o-filter: brightness(100%);
+                -ms-filter: brightness(100%);
+                filter: brightness(100%);
+            }
+
+            .video-mouseover:hover {
+                -webkit-filter: brightness(70%);
+                -moz-filter: brightness(70%);
+                -o-filter: brightness(70%);
+                -ms-filter: brightness(70%);
+                filter: brightness(70%);
+                cursor: pointer;
+            }
+        </style>
+        <div class="row ">
+            <div class="col-6" id="vid0" align="center">                
+                <video width='100%' autoplay=true loop class="video-mouseover" poster="MarineData_files/videos/cut_0.jpg">
+                    <source src='MarineData_files/videos/cut_0.webm' type='video/webm'>
+                    <source src='MarineData_files/videos/cut_0".mp4' type='video/mp4'>
+                </video>
+            </div>
+            <div class="col-6" id="vid1" align="center">                
+                <video width='100%' autoplay=true loop class="video-mouseover" poster="MarineData_files/videos/cut_1.jpg">
+                    <source src='MarineData_files/videos/cut_1.webm' type='video/webm'>
+                    <source src='MarineData_files/videos/cut_1".mp4' type='video/mp4'>
+                </video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><p>Ajay folder</p></div>
+        </div>
+        <div class="row ">
+            <div class="col-6" id="vid2" align="center">                
+                <video width='100%' loop class="video-mouseover" poster="MarineData_files/videos/cut_2.jpg">
+                    <source src='MarineData_files/videos/cut_2.webm' type='video/webm'>
+                    <source src='MarineData_files/videos/cut_2".mp4' type='video/mp4'>
+                </video>
+            </div>
+            <div class="col-6" id="vid3" align="center">                
+                <video width='100%' loop class="video-mouseover" poster="MarineData_files/videos/cut_3.jpg">
+                    <source src='MarineData_files/videos/cut_3.webm' type='video/webm'>
+                    <source src='MarineData_files/videos/cut_3".mp4' type='video/mp4'>
+                </video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><p>Oahu 23th July </p></div>
+        </div>
+    </div>
+
+    <br>
+
+    <h5>Locations</h5>
+
+    <div class="container" style="width:100%; margin:0; padding:0">
+
+    <div id="map" ></div>
+
+    </div>
+
+    <br>
+    <div id="teaser" class="container" style="width:100%; margin:0; padding:0;">
+        <h5>Dataset overview</h5>
+        <p align="justify">
+            Total length: 12.38 hours
+            <br>
+            Number of videos: 1374
+            <br>
+        </p>
+    </div>
+
+    <iframe src="./MarineData_files/mrd-chart/index.html" style="width:100%; height: 500px; border-color: transparent;">
+
+    </iframe>
+
+    <!--
+    <div class="section">
+        <h5>Folders</h5>
+        <div id="CSVTable"></div>
+
+        <script>
+            $(function () {
+                $('#CSVTable').CSVToTable('MarineData_files/information.csv');
+            });
+        </script>
+        
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $('.table').footable();
+            });
+        </script>
+
+    </div>
+     -->
+
+
+    <br>
+
+    <div class="section">
+        <h5>How to download the Dataset</h5> 
+        If you would like to download the Marine Kit Video dataset, please fill out an agreement to the <a target="_blank" href="https://forms.gle/u1oEjGddH9sqvPmr6">"Marine Video Kit Dataset Terms of Use"</a> to get the download link.
+		
+    </div>
+
+    <div class="section">
+        <h5>Discussion</h5>
+        Please email us at tsha [at] cse.ust.hk for any inquiries. You can also post to the discussion board below.
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://marine-video-kit-dataset.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="MarineData_files/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="MarineData_files/footable.min.js"></script> -->
+<!-- <script type="text/javascript" src="MarineData_files/jquery.csvToTable.js"></script> -->
+<script src="MarineData_files/leaflet.markercluster/leaflet.markercluster-src.js"></script>
+<script id="dsq-count-scr" src="https://marine-video-kit-dataset.disqus.com/count.js" async></script>
+
+<script src="MarineData_files/locationData.js"></script>
+<script src="MarineData_files/mapApp-min.js"></script>
+
+<script>
+      $('.video-mouseover').hover(function() {
+            if (this.hasAttribute("controls")) {
+                this.removeAttribute("controls")
+            } else {
+                this.setAttribute("controls", "controls")
+            }
+        });
+</script>
+
+
+
+<!-- End Document
+     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+</body>
+</html>
